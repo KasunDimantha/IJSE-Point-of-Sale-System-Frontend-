@@ -5,6 +5,7 @@ import { AuthProvider } from './utils/AuthContext';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import HomeBill from './pages/HomeBill';
+import UserPage from './pages/UserPage';
 
 
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path='/login' element={<Login/>}/>
             <Route path='/home' element={<HomeBill/>}/>
+            <Route path='/users' element={<UserPage/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
