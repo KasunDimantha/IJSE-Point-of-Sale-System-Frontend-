@@ -8,6 +8,7 @@ export default {
       height: {
         'h29': '29px',
         'h100' : '100vh',
+        'h92' : '92vh',
         'h25' : '25px',
         'h500': '500px',
         'h500': '500px',

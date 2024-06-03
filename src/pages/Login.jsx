@@ -36,7 +36,7 @@ function Login() {
             <form onSubmit={handleLogin}>
                 <div>
                     <label htmlFor="username" className="block text-lg font-medium text-white">Username</label>
-                    <input className='bg-gray-300 p-2 rounded-md' 
+                    <input className='bg-gray-300 p-2 rounded-md focus:outline-none' 
                            type="text" 
                            placeholder='Username'
                            onChange={(e) => {
@@ -45,7 +45,7 @@ function Login() {
                 </div>
                 <div>
                     <label htmlFor="password" className="block text-lg font-medium text-white">Password</label>
-                    <input className='bg-gray-300 p-2 rounded-md' 
+                    <input className='bg-gray-300 p-2 rounded-md focus:outline-none' 
                            type="password" 
                            placeholder='Password'
                            onChange={(e) => {
