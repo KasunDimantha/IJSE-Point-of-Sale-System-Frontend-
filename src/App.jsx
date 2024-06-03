@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { AuthProvider } from './utils/AuthContext';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import HomeBill from './pages/HomeBill';
 
 
 
@@ -15,6 +17,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/home' element={<HomeBill/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
