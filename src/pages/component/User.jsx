@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../utils/AuthContext';
 import axios from 'axios';
 import { tr } from 'date-fns/locale';
+import '../../App.css'
 
 function User() {
 
@@ -22,6 +23,7 @@ function User() {
     const [item, setItem] = useState([]);
     const [pId, setPId] = useState('');
     const [edit, setEdit] = useState(false);
+    const [query, setQuery] = useState('');
     let count = 1;
 
     useEffect(() => {
@@ -159,7 +161,7 @@ function User() {
             {!edit && (
                 <div className='bg-gray-100 m-3 pt-3 pb-3 rounded-md'>
                     <form onSubmit={submitProduct}>
-                        <div className='flex flex-col gap-2 m-2 ml-3 mr-3'>
+                        <div className='flex flex-col gap-2 m-2 ml-3 mr-3 gap-4'>
                             <div>
                                 <div>
                                     <div>
@@ -178,7 +180,7 @@ function User() {
                                     <div>
                                         <label className=' font-bold'>Category</label>
                                     </div>
-                                    <div>
+                                    <div className='text-sm'>
                                         <select
                                         
                                             name="category"
@@ -186,7 +188,7 @@ function User() {
                                             required
                                             value={itemCategory}
                                             >
-                                            <option value="">Select Category</option>
+                                            <option value="" >Select Category</option>
     
                                             {categories &&
                                                 categories.map((item) => (
@@ -318,29 +320,35 @@ function User() {
 
         </div>
 
-        <div className='flex-auto w-full bg-white m-3 pt-3 pb-3 rounded-md'>
-            <div className='ml-3'>
-                <table>
+        <div className='product flex-auto w-full bg-white m-3 pt-3 pb-3  rounded-md'>
+            <div className='ml-3 mr-3'>
+                <div className='flex justify-center mb-2'>
+                    <input type="text" 
+                        placeholder='Search Product here....' 
+                        className='bg-gray-200 items-center hover:bg-gray-300 py-1 px-2 rounded focus:outline-none'
+                        onChange={(e) => setQuery(e.target.value)}  />
+                </div>
+                <table className='min-w-full bg-white border border-gray-500 '>
                     <thead>
                         <tr>
-                            <th className='border-2 border-gray-300 px-4 py-2'>No.</th>
-                            <th className='border-2 border-gray-300 px-4 py-2'>Item Name</th>
-                            <th className='border-2 border-gray-300 px-4 py-2'>Item Category</th>
-                            <th className='border-2 border-gray-300 px-4 py-2'>Item Quantity</th>
-                            <th className='border-2 border-gray-300 px-4 py-2'>Item Price</th>
-                            <th className='border-2 border-gray-300 px-4 py-2'>Action</th>
+                            <th className='py-2 px-4 border-b border-gray-500'>No.</th>
+                            <th className='py-2 px-4 border-b border-gray-500'>Item Name</th>
+                            <th className='py-2 px-4 border-b border-gray-500'>Item Category</th>
+                            <th className='py-2 px-4 border-b border-gray-500'>Item Quantity</th>
+                            <th className='py-2 px-4 border-b border-gray-500'>Item Price</th>
+                            <th className='py-2 px-4 border-b border-gray-500'>Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        {item && item.map((item) => (
+                        {item && item.filter(item => item.itemName.toLowerCase().includes(query)).map((item) => (
                             <tr key={item.id}>
-                                <td className='border-2 border-gray-300 px-4 py-2'>{count++}</td>
-                                <td className='border-2 border-gray-300 px-4 py-2'>{item.itemName}</td>
-                                <td className='border-2 border-gray-300 px-4 py-2'>{item.category.name}</td>
-                                <td className='border-2 border-gray-300 px-4 py-2'>{item.qty}</td>
-                                <td className='border-2 border-gray-300 px-4 py-2'>{item.price}</td>
-                                <td className='border-2 border-gray-300 px-4 py-2'><button type="button"
+                                <td className='py-2 px-4 border-b border-gray-500'>{count++}</td>
+                                <td className='py-2 px-4 border-b border-gray-500'>{item.itemName}</td>
+                                <td className='py-2 px-4 border-b border-gray-500'>{item.category.name}</td>
+                                <td className='py-2 px-4 border-b border-gray-500'>{item.qty}</td>
+                                <td className='py-2 px-4 border-b border-gray-500'>{item.price}</td>
+                                <td className='py-2 px-4 border-b border-gray-500'><button type="button"
                                                                                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
                                                                                             onClick={() => {
                                                                                             setEdit(true);

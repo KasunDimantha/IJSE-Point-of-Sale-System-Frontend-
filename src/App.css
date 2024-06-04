@@ -23,3 +23,8 @@
     background-size: cover;
     margin: 0;
 }
+
+.product {
+    height: 580px;
+    overflow-y: auto;
+}

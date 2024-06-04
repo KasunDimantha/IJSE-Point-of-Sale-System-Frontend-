@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path='/login' element={<Login/>}/>
             <Route path='/home' element={<HomeBill/>}/>
-            <Route path='/users' element={<UserPage/>}/>
+            <Route path='/items' element={<UserPage/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
