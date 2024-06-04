@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import HomeBill from './pages/HomeBill';
 import UserPage from './pages/UserPage';
+import UserPage01 from './pages/UserPage01';
 
 
 
@@ -21,6 +22,7 @@ function App() {
             <Route path='/login' element={<Login/>}/>
             <Route path='/home' element={<HomeBill/>}/>
             <Route path='/items' element={<UserPage/>}/>
+            <Route path='/users' element={<UserPage01/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

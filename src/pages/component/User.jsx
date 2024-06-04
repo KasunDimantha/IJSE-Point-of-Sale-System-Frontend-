@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../utils/AuthContext';
 import axios from 'axios';
-import { tr } from 'date-fns/locale';
 import '../../App.css'
 
 function User() {
@@ -135,7 +134,7 @@ function User() {
   return (
     <div>
       <div className='flex h-screen bg-slate-300'>
-        <div className='flex-none w-64'>
+        <div className='flex-none w-1/3'>
 
             <div className='bg-gray-100 m-3 pt-3 pb-3 rounded-md'>
                 <form onSubmit={submitCategory}>

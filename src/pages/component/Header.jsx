@@ -20,8 +20,8 @@ function Header() {
     }
   return (
     <div>
-      <div className='flex justify-between items-center h-12 pr-12 pl-12 bg-[#0b2f00]'>
-        <div>
+      <div className='flex justify-between items-center h-16 pr-12 pl-12 bg-[#0b2f00]'>
+        <div className='pt-4 pb-4'>
             <Link to='/home'>
                 <img src={logo} />
             </Link>
