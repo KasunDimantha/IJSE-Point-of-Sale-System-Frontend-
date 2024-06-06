@@ -51,7 +51,6 @@ function User01() {
           password,
         };
     
-        console.log(userData);
     
         axios.post("http://localhost:8080/users", userData, config)
           .then((response) => {
@@ -80,7 +79,6 @@ function User01() {
         axios
           .put(`http://localhost:8080/users/${id}`, userData, config)
           .then((response) => {
-            console.log(response.data);
             alert("User updated");
             getUser();
             setEdit(false);
