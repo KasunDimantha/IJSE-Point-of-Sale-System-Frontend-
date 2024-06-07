@@ -8,6 +8,7 @@ import HomeBill from './pages/HomeBill';
 import UserPage from './pages/UserPage';
 import UserPage01 from './pages/UserPage01';
 import OrderPage from './pages/OrderPage';
+import OrderItemPage from './pages/OrderItemPage';
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='/items' element={<UserPage/>}/>
             <Route path='/users' element={<UserPage01/>}/>
             <Route path='/orders' element={<OrderPage/>}/>
+            <Route path='/orders/:id/orderitem' element={<OrderItemPage/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

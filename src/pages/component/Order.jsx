@@ -42,8 +42,10 @@ function Order() {
     const createOrder = () => {
         axios.post('http://localhost:8080/orders', "" ,config)
         .then((res) => {
-           navigate(`/orders/${res.data.id}/editorder`)
-           console.log(res.data)
+            if (res.status === 201) {
+                navigate(`/orders/${res.data.id}/orderitem`)
+            }
+           
         })
         .catch((err) => {
             console.log(err)
